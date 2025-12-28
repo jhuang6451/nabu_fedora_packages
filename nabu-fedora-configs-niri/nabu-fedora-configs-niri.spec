@@ -2,7 +2,7 @@
 %global pkg_release 1
 
 Name:           nabu-fedora-configs-niri
-Version:        0.1.17
+Version:        0.1.18
 Release:        %{pkg_release}%{?dist}
 Summary:        Configurations for Fedora for Nabu with niri Composer
 License:        MIT
@@ -39,7 +39,8 @@ cp -a usr %{buildroot}/
 %attr(644, root, root) %{_prefix}/lib/systemd/system/fcitx5-autostart.service
 %attr(644, root, root) %{_userpresetdir}/91-fcitx5-autostart.preset
 %attr(644, root, root) %{_userpresetdir}/92-niri-dms.preset
-%attr(644, root, root) %{_presetdir}/92-greetd.preset
+%attr(644, root, root) %{_userpresetdir}/93-audio.preset
+%attr(644, root, root) %{_presetdir}/91-greetd.preset
 
 # Wallpapers Dir
 %defattr(644, root, root, 755)
