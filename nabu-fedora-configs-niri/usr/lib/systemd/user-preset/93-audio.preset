@@ -1,0 +1,6 @@
+disable pulseaudio.service
+disable pulseaudio.socket
+
+enable pipewire.service
+enable pipewire-pulse.service
+enable wireplumber.service
