@@ -2,7 +2,7 @@
 %global pkg_release 1
 
 Name:           nabu-fedora-configs-niri
-Version:        0.1.19
+Version:        0.1.20
 Release:        %{pkg_release}%{?dist}
 Summary:        Configurations for Fedora for Nabu with niri Composer
 License:        MIT
@@ -35,7 +35,6 @@ cp -a usr %{buildroot}/
 # General Configs
 %attr(644, root, root) %config(noreplace) %{_sysconfdir}/locale.conf
 %attr(644, root, root) %config(noreplace) %{_sysconfdir}/environment.d/99-im.conf
-%attr(644, root, root) %config(noreplace) %{_sysconfdir}/greetd/config.toml
 %attr(644, root, root) %{_prefix}/lib/systemd/system/fcitx5-autostart.service
 %attr(644, root, root) %{_userpresetdir}/91-fcitx5-autostart.preset
 %attr(644, root, root) %{_userpresetdir}/92-dms.preset
@@ -62,7 +61,29 @@ EOF
 fi
 
 # ----------------------------------------------------------------------
-# add wants to niri service
+# updating greetd config
+# ----------------------------------------------------------------------
+CONFIG_FILE="/etc/greetd/config.toml"
+
+if [ ! -d "/etc/greetd" ]; then
+    echo "creating /etc/greetd ..."
+    mkdir -p /etc/greetd
+fi
+
+cat > "$CONFIG_FILE" <<EOF
+[terminal]
+vt = 1
+
+[default_session]
+user = "greeter"
+command = "dms-greeter --command niri"
+EOF
+
+if [ $? -eq 0 ]; then
+    echo "greetd config updated."
+
+# ----------------------------------------------------------------------
+# adding wants to niri service
 # ----------------------------------------------------------------------
 mkdir -p /etc/systemd/user/niri.service.wants/
 
