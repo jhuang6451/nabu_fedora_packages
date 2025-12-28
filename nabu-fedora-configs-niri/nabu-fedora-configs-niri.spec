@@ -38,7 +38,7 @@ cp -a usr %{buildroot}/
 %attr(644, root, root) %config(noreplace) %{_sysconfdir}/greetd/config.toml
 %attr(644, root, root) %{_prefix}/lib/systemd/system/fcitx5-autostart.service
 %attr(644, root, root) %{_userpresetdir}/91-fcitx5-autostart.preset
-%attr(644, root, root) %{_userpresetdir}/92-niri-dms.preset
+%attr(644, root, root) %{_userpresetdir}/92-dms.preset
 %attr(644, root, root) %{_userpresetdir}/93-audio.preset
 %attr(644, root, root) %{_presetdir}/91-greetd.preset
 
