@@ -2,7 +2,7 @@
 %global pkg_release 1
 
 Name:           nabu-fedora-configs-niri
-Version:        0.1.18
+Version:        0.1.19
 Release:        %{pkg_release}%{?dist}
 Summary:        Configurations for Fedora for Nabu with niri Composer
 License:        MIT
