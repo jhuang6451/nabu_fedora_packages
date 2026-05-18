@@ -2,7 +2,7 @@
 
 Name:           nabu-fedora-configs-gnome
 Version:        0.4.7
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Configurations for Fedora for Nabu with Gnome DE
 License:        MIT
 URL:            https://github.com/jhuang6451/nabu_fedora
