@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
 Name:           nabu-fedora-configs-kde
-Version:        0.2
-Release:        2%{?dist}
+Version:        0.3
+Release:        1%{?dist}
 Summary:        Configurations for Fedora for Nabu with KDE Plasma DE
 License:        MIT
 URL:            https://github.com/jhuang6451/nabu_fedora
-Source0:        https://github.com/jhuang6451/nabu_fedora_packages/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 
 %description
@@ -26,6 +26,9 @@ cp -a etc %{buildroot}/
 %attr(644, root, root) %config(noreplace) %{_sysconfdir}/environment.d/99-im.conf
 
 %changelog
+* Mon May 18 2026 jhuang6451 <xplayerhtz123@gmail.com> - 0.3-1
+- Switch to local source for Git-based builds.
+
 * Sat Oct 04 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.2-1
 - Fix error.
 

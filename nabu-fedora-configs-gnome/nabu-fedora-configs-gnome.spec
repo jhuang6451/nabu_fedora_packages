@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
 Name:           nabu-fedora-configs-gnome
-Version:        0.4.7
-Release:        2%{?dist}
+Version:        0.4.8
+Release:        1%{?dist}
 Summary:        Configurations for Fedora for Nabu with Gnome DE
 License:        MIT
 URL:            https://github.com/jhuang6451/nabu_fedora
-Source0:        https://github.com/jhuang6451/nabu_fedora_packages/releases/download/%{name}-%{version}/%{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  systemd-rpm-macros
 
@@ -45,20 +45,8 @@ fi
 %systemd_postun_with_restart fcitx5-autostart.service
 
 %changelog
+* Mon May 18 2026 jhuang6451 <xplayerhtz123@gmail.com> - 0.4.8-1
+- Switch to local source for Git-based builds.
+
 * Thu Oct 16 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.4.7-1
 - Fix fcitx5-autostart systemd preset name.
-
-* Fri Oct 10 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.4.5-1
-- Better way to install gdm monitor settings.
-
-* Fri Oct 10 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.4.3-1
-- Add fcitx5 autostart service.
-
-* Sat Oct 04 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.3-1
-- Fix error.
-
-* Sat Oct 04 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.2-1
-- Added fcitx5 envs and locale.conf.
-
-* Wed Oct 01 2025 jhuang6451 <xplayerhtz123@outlook.com> - 0.1-1
-- Initial release.
