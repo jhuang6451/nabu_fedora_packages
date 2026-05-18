@@ -1,7 +1,7 @@
 %undefine        _debugsource_packages
 %global KERNEL_VER 6.17.0
 %global KERNEL_CUSTOM_VER 1
-%global RELEASE_VER 4
+%global RELEASE_VER 5
 %global DEVICE_NAME nabu
 %global PLATFORM_NAME sm8150
 
@@ -136,6 +136,9 @@ echo "--- UKI generation complete for ${KERNEL_FULL_VER} ---"
 %postun
 
 %changelog
+* Mon May 18 2026 jhuang6451 <xplayerhtz123@gmail.com> - 6.17.0.sm8150.1-5.nabu
+- Test Copr webhook trigger with tag suffix.
+
 * Sun Dec 7 2025 jhuang6451 <xplayerhtz123@outlook.com> - 6.17.0.sm8150.1-3.nabu
 - Comment out screen rotation patch.
 
