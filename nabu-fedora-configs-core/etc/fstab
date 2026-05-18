@@ -1,3 +1,7 @@
 # /etc/fstab: static file system information.
-PARTLABEL=linux  /                  ext4   rw,errors=remount-ro,x-systemd.growfs  0 1
-PARTLABEL=esp    /boot/efi/         vfat   fmask=0022,dmask=0022                  0 1
+PARTLABEL=linux  /           btrfs  rw,noatime,subvol=@root,compress=zstd:3  0 0
+PARTLABEL=linux  /home       btrfs  rw,noatime,subvol=@home,compress=zstd:3  0 0
+PARTLABEL=linux  /var        btrfs  rw,noatime,subvol=@var,compress=zstd:3   0 0
+PARTLABEL=linux  /var/log    btrfs  rw,noatime,subvol=@log,compress=zstd:3   0 0
+PARTLABEL=linux  /var/cache  btrfs  rw,noatime,subvol=@cache,compress=zstd:3  0 0
+PARTLABEL=esp    /boot/efi   vfat   fmask=0022,dmask=0022                  0 2
